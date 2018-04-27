@@ -11,7 +11,7 @@ IP = 'localhost'
 PORT = 5678
 
 
-def read_config_tsplib(f_name='benchmarks/eil51.tsp'):
+def read_config_tsplib(f_name='../benchmarks/eil51.tsp'):
     info = {}
     cities = []
     with open(f_name) as f:
