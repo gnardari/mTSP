@@ -1,16 +1,16 @@
 (function (d3, _) {
 	'use strict';
-	console.log('Started!');
 
     const colors = ['Blue', 'Black', 'BlueViolet', 'Chartreuse', 'Gold',
                     'Gray', 'Magenta', 'Red', 'Snow', 'Indigo', 'GreenYellow']
 	var width = 800,
 	    height = 800,
-	    centered,
 	    dotscale = 5,
 	    citiesList = [];
 
 	var svg = d3.select("#tsp").append("svg")
+        .attr("display", "inline")
+        .attr("float", 'left')
 	    .attr("width", width)
 	    .attr("height", height)
         .attr("fill", "#5b702a");
@@ -29,7 +29,6 @@
 	    .attr("d", "M0,-5L10,0L0,5");
 
 	svg.append("rect")
-	    .attr("class", "background")
 	    .attr("width", width)
 	    .attr("height", height)
         .attr("fill", "#ad744e");
@@ -81,5 +80,4 @@
         })
         
     };
-	console.log('Loaded!');
 })(d3, _);
