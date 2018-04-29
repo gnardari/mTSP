@@ -3,6 +3,18 @@ body {
     margin: 25px;
 }
 
+.city {
+    r: 4;
+    /* fill: #5b702a; */
+    fill: #27422a;
+}
+
+.depot {
+    r: 5;
+    fill: #fff;
+    /* fill: #000000; */
+}
+
 path.connection {
     stroke-width: 1px;
     fill: none;

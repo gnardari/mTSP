@@ -5,15 +5,13 @@
                     'Gray', 'Magenta', 'Red', 'Snow', 'Indigo', 'GreenYellow']
 	var width = 500,
 	    height = 500,
-	    dotscale = 3,
 	    citiesList = [];
 
 	var svg = d3.select("#tsp").append("svg")
         .attr("display", "inline")
         .attr("float", 'left')
 	    .attr("width", width)
-	    .attr("height", height)
-        .attr("fill", "#5b702a");
+	    .attr("height", height);
 
 	// Arrows
 	svg.append("svg:defs")
@@ -38,8 +36,7 @@
             .append('circle')
                 .attr('cx', function (d) { return d.x; })
                 .attr('cy', function (d) { return d.y; })
-                .attr('r', dotscale)
-                .attr('class', 'city');
+                .attr('class', function(d) { return d.idx == 0 ? 'depot' : 'city';});
 	}
     
     function drawInfo(data) {
@@ -72,7 +69,6 @@
     const ws = new WebSocket("ws://localhost:5678/")
     ws.onmessage = function (event) {
         const data = jQuery.parseJSON(event.data);
-        drawInfo(data);
         if (data.cities.length > 0 && citiesList.length == 0) {
             citiesList = data.cities
             drawCities()
