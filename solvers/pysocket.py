@@ -22,8 +22,8 @@ def read_config_tsplib(f_name='../benchmarks/eil51.tsp'):
 
         for i in range(int(info['dimension'])):
             line = f.readline().split(' ')
-            cities.append({'x': int(line[1])*10,
-                           'y': int(line[2])*10,
+            cities.append({'x': int(line[1])*5,
+                           'y': int(line[2])*5,
                            'isDepot': False,
                            'idx': int(line[0])-1})
     return {'info': info, 'cities': cities}
