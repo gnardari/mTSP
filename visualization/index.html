@@ -11,31 +11,31 @@
     <div id='tsp'>
     
     <div class='column'>
-        <!-- Starting cost -->
         <div class='card'>
             <div class='card-container'>
-            <div class='card-label'>Starting Cost</div>
+                <div class='card-label'><b>Benchmark Name</b></div>
                 <div class='card-body'>
-                  <div id='current-cost-label'>Cost: 
-                    <span id='simulation-cost'>0</span>
-                  </div>
+                    <span id='problem-name'></span>
                 </div>
             </div>
         </div>
-
-        <!-- Starting cost -->
-        <div class='card'>
-            <div class='card-container'>
-            <div class='card-label'>Starting Cost</div>
-                <div class='card-body'>
-                  <div id='current-cost-label'>Cost: 
-                    <span id='simulation-cost'>0</span>
-                  </div>
-                </div>
-            </div>
-        </div>
-    </div>
     
+        <div class='card'>
+            <div class='card-container'>
+                <div class='card-label'><b>Number of Nodes</b></div>
+                <div class='card-body'>
+                    <span id='problem-dim'></span>
+                </div>
+            </div>
+        </div>
+        <div class='card'>
+            <div class='card-container'>
+                <div class='card-label'><b>Current Cost</b></div>
+                <div class='card-body'>
+                    <span id='solution-cost'></span>
+                </div>
+            </div>
+        </div>
     </div>
 
 	<script src="d3.v3.min.js" charset="utf-8"></script>

@@ -3,9 +3,9 @@
 
     const colors = ['Blue', 'Black', 'BlueViolet', 'Chartreuse', 'Gold',
                     'Gray', 'Magenta', 'Red', 'Snow', 'Indigo', 'GreenYellow']
-	var width = 800,
-	    height = 800,
-	    dotscale = 5,
+	var width = 500,
+	    height = 500,
+	    dotscale = 3,
 	    citiesList = [];
 
 	var svg = d3.select("#tsp").append("svg")
@@ -41,6 +41,12 @@
                 .attr('r', dotscale)
                 .attr('class', 'city');
 	}
+    
+    function drawInfo(data) {
+        d3.select('#problem-name').node().innerHTML = data.info.name;
+        d3.select('#problem-dim').node().innerHTML = data.info.dimension;
+        d3.select('#solution-cost').node().innerHTML = data.solution.cost;
+    }
 
 	function drawPath(ipath, index, drawnPaths) {
 		var paths = _.map(_.zip(ipath.slice(0,ipath.length-1), ipath.slice(1)), function (pair) {
@@ -66,8 +72,7 @@
     const ws = new WebSocket("ws://localhost:5678/")
     ws.onmessage = function (event) {
         const data = jQuery.parseJSON(event.data);
-        // console.log(data)
-        // drawInfo(data.info)
+        drawInfo(data);
         if (data.cities.length > 0 && citiesList.length == 0) {
             citiesList = data.cities
             drawCities()
