@@ -69,6 +69,7 @@
     const ws = new WebSocket("ws://localhost:5678/")
     ws.onmessage = function (event) {
         const data = jQuery.parseJSON(event.data);
+        drawInfo(data);
         if (data.cities.length > 0 && citiesList.length == 0) {
             citiesList = data.cities
             drawCities()
