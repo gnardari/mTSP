@@ -43,6 +43,7 @@ async def random_solution(data):
     smanB.append(smanB[0])
 
     solution['paths'] = [smanA, smanB]
+    solution['numAgents'] = 2
     time.sleep(random.random() * 3)
     return solution
 
